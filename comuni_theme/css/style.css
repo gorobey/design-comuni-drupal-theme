@@ -18,7 +18,25 @@ Text Domain: design_comuni_italia
 #toolbar-administration { height: auto; position: absolute; top: 0; }
 #toolbar-administration:before { content: initial; }
 
+/* Fix z-index Toolbar Amministrativa*/
+body header.it-header-wrapper,
+body header.it-header-wrapper.bs-is-fixed{
+	z-index:5 !important;
+}
+
 /* Fix Sticky Header con Toolbar Amministrativa*/
+body.toolbar-fixed.toolbar-horizontal .it-header-wrapper.it-header-sticky.is-sticky .it-header-navbar-wrapper {
+	position:fixed !important;
+	top: 39px !important;
+}
+
+body.toolbar-fixed.toolbar-horizontal.toolbar-tray-open .it-header-wrapper.it-header-sticky.is-sticky .it-header-navbar-wrapper {
+	position:fixed !important;
+	top: 78px !important;
+}
+
+/* Fix Sticky Header con Toolbar Amministrativa*/
+
 body.toolbar-fixed.toolbar-horizontal .it-header-wrapper.it-header-sticky.is-sticky .it-header-navbar-wrapper {
 	position:fixed !important;
 	top: 39px !important;
@@ -26,12 +44,6 @@ body.toolbar-fixed.toolbar-horizontal .it-header-wrapper.it-header-sticky.is-sti
 body.toolbar-fixed.toolbar-horizontal.toolbar-tray-open .it-header-wrapper.it-header-sticky.is-sticky .it-header-navbar-wrapper {
 	position:fixed !important;
 	top: 78px !important;
-}
-
-/* Fix z-index Toolbar Amministrativa*/
-body header.it-header-wrapper,
-body header.it-header-wrapper.bs-is-fixed{
-	z-index:5 !important;
 }
 
 /* Fix default logo */
@@ -94,12 +106,3 @@ footer .it-brand-wrapper img {
 
 /* Rimuove titolo da homepage */
 main.homepage h1{display: none;}
-
-/* Stile cursore tutto ciò che porta a una modal (es. ricerca) */
-*[data-bs-toggle="modal"]{
-	cursor: pointer;
-}
-
-.flex-basis-100 {
-	flex-basis: 100%;
-}
